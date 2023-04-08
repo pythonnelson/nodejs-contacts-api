@@ -1,15 +1,13 @@
 // Get all contacts
 // Route: GET /api/v1/contacts
 // Access: Public (for now)
-
-const getContact = (req,res) => {
+const getContacts = (req,res) => {
     res.status(200).json({ message: "All Contacts" });
 };
 
 // Create contact
-// Route: POST /api/v1/contacts
+// Route: GET /api/v1/contacts
 // Access: Public (for now)
-
 const viewContact = (req,res) => {
     res.status(200).json({ message: "View Contact" });
 };
@@ -17,27 +15,24 @@ const viewContact = (req,res) => {
 // Create contact
 // Route: POST /api/v1/contacts
 // Access: Public (for now)
-
 const createContact = (req,res) => {
-    res.status(200).json({ message: "Create Contact" });
+    res.status(201).json({ message: "Create Contact" });
 };
 
 // Create contact
-// Route: POST /api/v1/contacts
+// Route: PUT /api/v1/contacts
 // Access: Public (for now)
-
 const updateContact = (req,res) => {
     res.status(200).json({ message: "Update Contact" });
 };
 
 // Create contact
-// Route: POST /api/v1/contacts
+// Route: DELETE /api/v1/contacts
 // Access: Public (for now)
-
 const deleteContact = (req,res) => {
     res.status(200).json({ message: "Delete Contact" });
 };
 
 
 
-module.exports = { getContact, createContact, viewContact, updateContact, deleteContact };
+module.exports = { getContacts, createContact, viewContact, updateContact, deleteContact };
