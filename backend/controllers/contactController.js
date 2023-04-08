@@ -84,17 +84,15 @@ const updateContact = asyncHandler(async (req,res) => {
 // Create contact
 // Route: DELETE /api/v1/contacts
 // Access: Public (for now)
-const deleteContact = asyncHandler(async (req,res) => {
+const deleteContact = asyncHandler(async (req, res) => {
     const contact = await Contact.findById(req.params.id);
-
-    // If no matching id is found, throw an error, else return the contact
     if (!contact) {
-        res.status(404);
-        throw new Error('Contact not found');
+      res.status(404);
+      throw new Error("Contact not found");
     }
-    await Contact.remove();
+    await Contact.deleteOne({ _id: req.params.id });
     res.status(200).json(contact);
-});
+  });
 
 
 
