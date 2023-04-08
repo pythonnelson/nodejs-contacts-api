@@ -73,7 +73,7 @@ const loginUser = asyncHandler(async (req,res) => {
             },
         }, 
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1m" }
+            { expiresIn: "5m" }
         );
         res.status(200).json({ accessToken });
     } else {
@@ -87,7 +87,7 @@ const loginUser = asyncHandler(async (req,res) => {
 // Route: GET /api/v1/users/userInfo
 // Access: Private (for now)
 const userInfo = asyncHandler(async (req,res) => {
-    res.json({ message: "User Information"});
+    res.json(req.user);
 });
 
 module.exports = { registerUser, loginUser, userInfo };
